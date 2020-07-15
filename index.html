@@ -49,13 +49,75 @@
         <!--条件検索ボックス-->
         <div id="surch_box">
             <div id="surch_form">
-                <h2>店舗情報絞り込み</h2>
+                <div id="distance_label">
+                    <P><i class="fas fa-map-marker-alt"></i>範囲</P>
+                </div>
+                <div id="distance_serect_box">
+                    <div id=distance_serect>
+                        <div>
+                            <input type="radio" name="radio" class="radio-input" id="radio-01">
+                            <label for="radio-01">0.3km</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" class="radio-input" id="radio-02">
+                            <label for="radio-02">0.5km</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" class="radio-input" id="radio-03">
+                            <label for="radio-03">1.0km</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" class="radio-input" id="radio-04">
+                            <label for="radio-04">2.0km</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radio" class="radio-input" id="radio-05">
+                            <label for="radio-05">3.0km</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="radio_serect_box">
+                    <div>
+                        <label>
+                            <span class="checkbox-parts"><i class="far fa-credit-card"></i>カード利用可</span>
+                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <span class="checkbox-parts"><i class="fas fa-mobile-alt"></i>電子マネー利用可</span>
+                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                        </label>
+                    </div>
+                </div>
+                <div class="radio_serect_box">
+                    <div>
+                        <label>
+                            <span class="checkbox-parts"><i class="fas fa-parking"></i>駐車場有り</span>
+                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="checkbox-parts"><i class="fas fa-wifi"></i>WIFI有り</span>
+                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                        </label>
+                    </div>
+                </div>
+                <div id="freeword_box">
+                    <i class="fas fa-pen"></i><input type="serch" placeholder="フリーワード　例）名前、住所">
+                </div>
+                <div id="surch_button_box">
+                    <a href="#" class="btn-gradient-3d-orange">検索</a>
+                </div>
             </div>
         </div>
 
         <!--フッター-->
         <footer>
-                <p>GURUSUPO</p>
+            <p>GURUSUPO</p>
         </footer>
 
         <!--スクロールボタン-->
