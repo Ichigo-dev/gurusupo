@@ -38,10 +38,10 @@ a:visited {
     text-decoration: none;
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
     transition: .4s;
-    
+
     /*モバイル仕様*/
-    font-size:32px;
-    padding: 12px 30px; 
+    font-size: 32px;
+    padding: 12px 30px;
 }
 
 .btn-gradient-radius:hover {
@@ -58,7 +58,7 @@ header {
     position: fixed;
     z-index: 10000;
     width: 100%;
-    
+
     /*モバイル仕様*/
     height: 150px;
 }
@@ -67,7 +67,7 @@ header p {
     text-align: center;
     font-weight: 700;
     font-family: 'Sora', sans-serif;
-    
+
     /*モバイル仕様*/
     line-height: 150px;
     font-size: 68px;
@@ -83,7 +83,7 @@ header p {
     background-size: cover;
     background-position: center;
     position: relative;
-    
+
     /*モバイル仕様*/
     height: 100%;
 }
@@ -92,7 +92,6 @@ header p {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
 }
 
@@ -103,7 +102,7 @@ header p {
 #hero_title h1 {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    
+
     /*モバイル仕様*/
     font-size: 150px;
 }
@@ -111,37 +110,93 @@ header p {
 #hero_title p {
     text-align: center;
     font-family: 'Noto Serif JP', serif;
-    
+
     /*モバイル仕様*/
-    font-size:28px;
+    font-size: 28px;
 }
 
 #hero_button {
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto Slab', serif;
-    
+
     /*モバイル仕様*/
-    font-weight:400;
-    margin: 60px 80px 0;
+    font-weight: 400;
+    margin: 80px 80px 0;
 }
 
 /*****************************************************************
 ** 条件検索欄
 *******************************************************************/
-#surch_box{
+
+#surch_box {
     background-image: url("../images/background_pizza.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
-    
+
     /*モバイル仕様*/
     height: 90%;
 }
+
+#surch_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background-color: rgb(234, 234, 234);
+    ;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+#surch_form h2 {
+    background: rgb(208, 132, 19);
+    border-radius: 30px 30px 0 0;
+    line-height: 2.5;
+    font-size: 50px;
+    padding-left: 40px;
+    font-family: 'Noto Serif JP', serif;
+}
+
 /******************************************************************
 ** フッター
 *******************************************************************/
+
+footer {
+    height: 10%;
+    background: rgba(156, 156, 156, 0.58);
+    display: flex;
+    align-items:center;
+    font-family: 'Sora', sans-serif;
+    color:rgb(29,161,242);
+}
+
+footer div{
+    margin:0 auto;
+}
+
+footer p {
+    display:inline-block;
+    text-align: center;
+    font-size: 40px;
+    margin-right:40px;
+    color:black;
+}
+
+footer a {
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+}
+
+footer a i{
+    margin-right: 10px;
+}
 
 /******************************************************************
 ** スクロールボタン
