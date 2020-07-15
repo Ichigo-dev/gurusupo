@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>グルスポ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Bootstrap 4-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <title>ぐるスポ</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
+    <!--Bootstrap 3.3.5-->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
     <!--main.css-->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <!--Vue.js-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
     <div id="app">
-        <h1>{{gretting}}</h1>
-        <button class="btn btn-primary">いいね</button>
+        <!--ヘッダー-->
+        <header>
+            <p><a href="index.html">GURUSUPO</a></p>
+        </header>
+
+        <!--ヒーローイメージ-->
+        <div id="hero_box">
+            <div>
+                <!--サイトタイトル-->
+                <div id="hero_title">
+                    <h1>GURUSUPO</h1>
+                    <p>有名店から穴場まで、あなたの生活を少しだけ豊かにします</p>
+                </div>
+
+                <!--検索ボタン-->
+                <div id="hero_button">
+                    <!--いますぐ検索-->
+                    <a href="#" class="btn-gradient-radius">いますぐ検索</a>
+                    <!--条件検索-->
+                    <a href="#" class="btn-gradient-radius">条件から絞り込む</a>
+                </div>
+            </div>
+        </div>
+
+        <!--条件検索ボックス-->
+        <div id="surch_box">
+
+        </div>
+
+        <!--フッター-->
+        <footer>
+            <p></p>
+            <!--ツイッターへのリンク-->
+            <a href="https://twitter.com/nira_22222"></a>
+        </footer>
+
+        <!--スクロールボタン-->
+        <div class="scrollButton">
+
+        </div>
     </div>
 
-    <!--Bootstrap用-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--vuejs-paginate-->
+    <script src="https://unpkg.com/vuejs-paginate@latest"></script>
     <!--main.js-->
     <script type="text/javascript" src="js/main.js"></script>
     <!--Google Map API-->
