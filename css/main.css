@@ -86,7 +86,7 @@ header p {
     position: relative;
     
     /*モバイル仕様*/
-    height: 80%;
+    height: 100%;
 }
 
 #hero_box>div {
@@ -121,9 +121,9 @@ header p {
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto Slab', serif;
-    font-weight:500;
     
     /*モバイル仕様*/
+    font-weight:400;
     margin: 60px 25px 0;
 }
 
@@ -138,7 +138,7 @@ header p {
     position: relative;
     
     /*モバイル仕様*/
-    height: 80%;
+    height: 90%;
 }
 /******************************************************************
 ** フッター
