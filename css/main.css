@@ -79,12 +79,14 @@ header p {
 *******************************************************************/
 
 #hero_box {
-    height: 100%;
     background-image: url("../images/breakfast.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    
+    /*モバイル仕様*/
+    height: 80%;
 }
 
 #hero_box>div {
@@ -128,7 +130,16 @@ header p {
 /*****************************************************************
 ** 条件検索欄
 *******************************************************************/
-
+#surch_box{
+    background-image: url("../images/background_pizza.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+    /*モバイル仕様*/
+    height: 80%;
+}
 /******************************************************************
 ** フッター
 *******************************************************************/
