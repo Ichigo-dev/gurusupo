@@ -118,7 +118,7 @@ header p {
 #hero_button {
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Noto Serif JP', serif;
 
     /*モバイル仕様*/
     font-weight: 400;
@@ -167,35 +167,18 @@ header p {
 *******************************************************************/
 
 footer {
-    height: 10%;
     background: rgba(156, 156, 156, 0.58);
-    display: flex;
     align-items:center;
-    font-family: 'Sora', sans-serif;
     color:rgb(29,161,242);
 }
 
-footer div{
-    margin:0 auto;
-}
 
 footer p {
-    display:inline-block;
+    line-height: 3;
     text-align: center;
-    font-size: 40px;
-    margin-right:40px;
+    font-size: 32px;
     color:black;
-}
-
-footer a {
-    display: inline-block;
-    text-align: center;
-    font-size: 40px;
-    color: blue;
-}
-
-footer a i{
-    margin-right: 10px;
+    font-family: 'Sora', sans-serif;
 }
 
 /******************************************************************
