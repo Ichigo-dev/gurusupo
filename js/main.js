@@ -7,9 +7,15 @@ Vue.component('paginate', VuejsPaginate)
 var app = new Vue({
     el: "#app",
     data: {
-        // グーグルマップ設定
+        // グーグルマップ,グルナビ設定
         lat: 35.6809591,
         lng: 139.7673068,
+        range: 2,
+        wifi: 0,
+        parking: 0,
+        e_money: 0,
+        card: 0,
+        freeword: "",
         result: "",
 
         // ページネーション設定
@@ -96,8 +102,8 @@ function initMap() {
 
         // 緯度経度の取得
 
-        app.lat = position.coords.latitude;
-        app.lng = position.coords.longitude;
+        // app.lat = position.coords.latitude;
+        // app.lng = position.coords.longitude;
 
         // 緯度経度の取得
         latLng = new google.maps.LatLng(app.lat, app.lng);
@@ -113,7 +119,12 @@ function initMap() {
             keyid: "9be00fbaa95f4bcc1b759ab2072385e0",
             latitude: app.lat,
             longitude: app.lng,
-            range: 5,
+            range: app.range,
+            card: app.card,
+            parking: app.parking,
+            e_money: app.e_money,
+            wifi: app.wifi,
+            freeword: app.freeword,
             hit_per_page: 50
         }
 
@@ -140,7 +151,12 @@ function initMap() {
             keyid: "9be00fbaa95f4bcc1b759ab2072385e0",
             latitude: app.lat,
             longitude: app.lng,
-            range: 5,
+            range: app.range,
+            card: app.card,
+            parking: app.parking,
+            e_money: app.e_money,
+            wifi: app.wifi,
+            freeword: app.freeword,
             hit_per_page: 50
         }
 

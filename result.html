@@ -30,7 +30,7 @@
         </header>
 
         <div class="container">
-            <div id="page_info">
+            <div id="page_info" v-if="result">
                 <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
                 <i class="fa fa-search"></i>
             </div>

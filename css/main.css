@@ -120,6 +120,7 @@ header p {
 
 #hero_title {
     color: rgb(221, 219, 219);
+    text-shadow:1px 0px 8px black;
 }
 
 #hero_title h1 {
