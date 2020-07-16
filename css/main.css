@@ -30,6 +30,10 @@ a:visited {
     height: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 /*グラデーションボタン*/
 
 .btn-gradient-radius {
@@ -77,10 +81,10 @@ a:visited {
 ******************************************************************/
 
 header {
-    display: none;
     background: #fff;
     opacity: 0.7;
     position: fixed;
+    top: 0;
     z-index: 10000;
     width: 100%;
     height: 70px;
@@ -357,3 +361,121 @@ footer p {
     margin: auto;
     text-align: center;
 }
+
+/****************************************************************
+** result.htmlの初期設定
+****************************************************************/
+
+/*コンテナ*/
+
+.container {
+    min-height:100%;
+    padding: 70px 0 0;
+    width: 100%;
+    background-image: url("../images/modan_background.jpg");
+    background-size: cover;
+}
+
+/*Google Map*/
+
+#map {
+    height: 300px;
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+#page_info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffa04e;
+    height: 30px;
+    margin: 0 0 20px;
+}
+
+#page_info>i{
+    font-weight: 600;
+    font-size:16px;
+}
+
+/***************************************************************
+
+****************************************************************/
+
+/***************************************************************
+** 検索結果表示欄
+****************************************************************/
+
+#result_box {
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.result_item {
+    border-bottom: 1px solid #d2d2d2;
+    width: 47%;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.result_item:first-child,
+.result_item:nth-child(2) {
+    margin-top: 10px;
+}
+
+.result_item:last-child {
+    border-bottom: none;
+}
+
+.result_item:nth-child(odd) {
+    background: white;
+}
+
+.result_item:nth-child(even) {
+    background: white;
+}
+
+.result_item>div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.result_item h2 {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.result_item h2>span {
+    /*font-weight:500;*/
+    font-size: 20px;
+    margin-right: 3px;
+}
+
+.result_item p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.result_item i {
+    font-weight: 600;
+    margin-right: 5px;
+    font-size: 16px;
+    color: #ff8100;
+}
+
+.result_item .gurunabi_link {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    margin: 20px auto;
+    display: block;
+}
+
+

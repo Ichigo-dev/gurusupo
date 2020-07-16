@@ -25,19 +25,40 @@
 <body>
     <div id="app">
         <!--ヘッダー-->
-        <header :class="{ '-fixed': scrollY > 300 }">
+        <header>
             <p><a href="index.html">GURUSUPO</a></p>
         </header>
 
-        
+        <div class="container">
+            <div id="page_info">
+                <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
+                <i class="fa fa-search"></i>
+            </div>
+            <div id="map"></div>
+
+
+            <div id="result_box">
+                <div class="result_item" v-for="(item,index) in getItems">
+                    <div>
+                        <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h1>
+                        <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
+                    </div>
+                </div>
+                <paginate :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
+                </paginate>
+            </div>
+
+
+        </div>
 
         <!--フッター-->
         <footer>
             <p>GURUSUPO</p>
         </footer>
 
+    
         <!--スクロールボタン-->
-        <div id="page_top" :style="hiddenStyle" @click="scrollTop"><span></span></div>
+        <div id="page_top"  @click="scrollTop"><span></span></div>
     </div>
 
     <!--vuejs-paginate-->

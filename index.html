@@ -21,7 +21,7 @@
 <body>
     <div id="app">
         <!--ヘッダー-->
-        <header :class="{ '-fixed': scrollY > 300 }">
+        <header :class="{ '-fixed': scrollY > 300 }" class="hidden">
             <p><a href="index.html">GURUSUPO</a></p>
         </header>
 
@@ -120,7 +120,7 @@
         </footer>
 
         <!--スクロールボタン-->
-        <div id="page_top" :style="hiddenStyle" @click="scrollTop"><span></span></div>
+        <div id="page_top"  @click="scrollTop"><span></span></div>
     </div>
 
     <!--vuejs-paginate-->
