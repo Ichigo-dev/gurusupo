@@ -38,10 +38,8 @@ a:visited {
     text-decoration: none;
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
     transition: .4s;
-
-    /*モバイル仕様*/
-    font-size: 32px;
-    padding: 12px 30px;
+    font-size: 16px;
+    padding: 7px 15px;
 }
 
 .btn-gradient-radius:hover {
@@ -78,19 +76,15 @@ header {
     position: fixed;
     z-index: 10000;
     width: 100%;
-
-    /*モバイル仕様*/
-    height: 150px;
+    height: 70px;
 }
 
 header p {
     text-align: center;
     font-weight: 700;
     font-family: 'Sora', sans-serif;
-
-    /*モバイル仕様*/
-    line-height: 150px;
-    font-size: 68px;
+    line-height: 70px;
+    font-size: 36px;
 }
 
 /*****************************************************************
@@ -103,8 +97,6 @@ header p {
     background-size: cover;
     background-position: center;
     position: relative;
-
-    /*モバイル仕様*/
     height: 100%;
 }
 
@@ -122,27 +114,21 @@ header p {
 #hero_title h1 {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-
-    /*モバイル仕様*/
-    font-size: 150px;
+    font-size: 64px;
 }
 
 #hero_title p {
     text-align: center;
     font-family: 'Noto Serif JP', serif;
-
-    /*モバイル仕様*/
-    font-size: 28px;
+    font-size: 12px;
 }
 
 #hero_button {
     display: flex;
     justify-content: space-between;
     font-family: 'Noto Serif JP', serif;
-
-    /*モバイル仕様*/
     font-weight: 400;
-    margin: 80px 80px 0;
+    margin: 40px 20px 0;
 }
 
 /*****************************************************************
@@ -198,11 +184,24 @@ header p {
     display: flex;
     flex-direction:column;
     justify-content:space-around;
+}
+
+#distance_label p:first-child{
+    margin: 0 auto;
+    text-align: center;
+    padding: 1% 0;
+    border-radius:100px;
+    width: 50%;
+    background:#ff9513;
+    color:#ffffff;
+}
+
+#distance_label p:nth-child(2){
     padding-left: 5%;
 }
 
 #distance_label p {
-    font-size: 52px;
+    font-size: 20px;
 }
 
 #distance_serect {
@@ -220,18 +219,18 @@ header p {
 
 #distance_serect input {
     margin-top: 0;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
 
 #distance_serect label {
-    font-size: 40px;
+    font-size: 20px;
     margin-bottom: 0;
 }
 
 .radio_serect_box {
     display: flex;
-    font-size: 35px;
+    font-size: 12px;
 }
 
 .radio_serect_box>div {
@@ -242,13 +241,9 @@ header p {
 }
 
 .radio_serect_box label {
-    margin: 0;
-    
-}
-
-.radio_serect_box label>span {
-    margin: 0 20px 0;
-    
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .radio_serect_box>div:first-child {
@@ -256,9 +251,9 @@ header p {
 }
 
 .radio_serect_box input{
-    margin: 0;
-    width: 30px;
-    height: 30px;
+    margin: 0 0 0 10px;
+    width: 15px;
+    height: 15px;
 }
 
 #freeword_box {
@@ -268,9 +263,9 @@ header p {
 }
 
 #freeword_box input {
-    width: 90%;
+    width: 80%;
     height: 50%;
-    font-size:36px;
+    font-size:16px;
 }
 
 #surch_button_box {
@@ -282,16 +277,16 @@ header p {
 
 #surch_button_box a{
     width: 80%;
-    height: 100px;
+    height: 50%;
     text-align: center;
     color:white;
-    font-size:40px;
+    font-size:20px;
 }
 
 #surch_box i{
     color:rgb(234,125,9);
-    font-size:36px;
-    margin-right: 15px;
+    font-size:16px;
+    margin-right: 10px;
 }
 
 /******************************************************************
@@ -308,7 +303,7 @@ footer {
 footer p {
     line-height: 3;
     text-align: center;
-    font-size: 32px;
+    font-size: 12px;
     color: black;
     font-family: 'Sora', sans-serif;
 }
