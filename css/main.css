@@ -155,7 +155,7 @@ header p {
     background-size: cover;
     background-position: center;
     position: relative;
-
+    font-family: 'Noto Sans JP', sans-serif;
     /*モバイル仕様*/
     height: 90%;
 }
@@ -196,7 +196,8 @@ header p {
 #distance_label {
     border-radius: 10px 10px 0 0;
     display: flex;
-    align-items: center;
+    flex-direction:column;
+    justify-content:space-around;
     padding-left: 5%;
 }
 
@@ -207,13 +208,20 @@ header p {
 #distance_serect {
     margin: 0 5%;
     display: flex;
+    flex-wrap:wrap;
     height: 100%;
     align-items: center;
     justify-content: space-between;
 }
 
+#distance_serect>div{
+    margin-right: 20px;
+}
+
 #distance_serect input {
     margin-top: 0;
+    width: 30px;
+    height: 30px;
 }
 
 #distance_serect label {
@@ -223,7 +231,7 @@ header p {
 
 .radio_serect_box {
     display: flex;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .radio_serect_box>div {
@@ -235,14 +243,22 @@ header p {
 
 .radio_serect_box label {
     margin: 0;
+    
 }
 
 .radio_serect_box label>span {
     margin: 0 20px 0;
+    
 }
 
 .radio_serect_box>div:first-child {
     border-right: 1px solid #ccc;
+}
+
+.radio_serect_box input{
+    margin: 0;
+    width: 30px;
+    height: 30px;
 }
 
 #freeword_box {
@@ -252,8 +268,9 @@ header p {
 }
 
 #freeword_box input {
-    width: 70%;
+    width: 90%;
     height: 50%;
+    font-size:36px;
 }
 
 #surch_button_box {
@@ -265,7 +282,7 @@ header p {
 
 #surch_button_box a{
     width: 80%;
-    height: 50px;
+    height: 100px;
     text-align: center;
     color:white;
     font-size:40px;
