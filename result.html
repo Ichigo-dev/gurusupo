@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>ぐるスポ</title>
+    <!--Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
+    <!--Bootstrap 3.3.5-->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
+    <!--main.css-->
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <!--Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--ヘッダー-->
+        <header :class="{ '-fixed': scrollY > 300 }">
+            <p><a href="index.html">GURUSUPO</a></p>
+        </header>
+
+        
+
+        <!--フッター-->
+        <footer>
+            <p>GURUSUPO</p>
+        </footer>
+
+        <!--スクロールボタン-->
+        <div id="page_top" :style="hiddenStyle" @click="scrollTop"><span></span></div>
+    </div>
+
+    <!--vuejs-paginate-->
+    <script src="https://unpkg.com/vuejs-paginate@latest"></script>
+    <!--main.js-->
+    <script type="text/javascript" src="js/main.js"></script>
+    <!--Google Map API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACO5o4bBK3Qbvsn_TLgk5aX-ev86DH5EE&callback=initMap"></script>
+</body>
+
+</html>

@@ -12,20 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
-    <!--Bootstrap 3.3.5-->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
     <!--main.css-->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <!--Vue.js-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!--jquery-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
     <div id="app">
         <!--ヘッダー-->
-        <header>
+        <header :class="{ '-fixed': scrollY > 300 }">
             <p><a href="index.html">GURUSUPO</a></p>
         </header>
 
@@ -35,15 +31,15 @@
                 <!--サイトタイトル-->
                 <div id="hero_title">
                     <h1>GURUSUPO</h1>
-                    <p>有名店から穴場まで、あなたの生活を少しだけ豊かにする飲食店検索サイト</p>
+                    <p>有名店から穴場まで、あなたの生活を少しだけ豊かにする<br>飲食店検索サイト</p>
                 </div>
 
                 <!--検索ボタン-->
                 <div id="hero_button">
                     <!--いますぐ検索-->
-                    <a href="#" class="btn-gradient-radius">いますぐ検索</a>
+                    <a href="result.html" class="btn-gradient-radius">いますぐ検索</a>
                     <!--条件検索-->
-                    <a href="#" class="btn-gradient-radius">条件から絞り込む</a>
+                    <a  @click.prevent.stop="scrollBottom" class="btn-gradient-radius">条件から絞り込む</a>
                 </div>
             </div>
         </div>
@@ -113,7 +109,7 @@
                     <i class="fas fa-pen"></i><input type="serch" placeholder="フリーワード　例）名前、住所">
                 </div>
                 <div id="surch_button_box">
-                    <a href="#" class="btn-gradient-3d-orange">検索</a>
+                    <a href="result.html" class="btn-gradient-3d-orange">検索</a>
                 </div>
             </div>
         </div>
@@ -124,17 +120,13 @@
         </footer>
 
         <!--スクロールボタン-->
-        <div class="scrollButton">
-
-        </div>
+        <div id="page_top" :style="hiddenStyle" @click="scrollTop"><span></span></div>
     </div>
 
     <!--vuejs-paginate-->
     <script src="https://unpkg.com/vuejs-paginate@latest"></script>
     <!--main.js-->
     <script type="text/javascript" src="js/main.js"></script>
-    <!--Google Map API-->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACO5o4bBK3Qbvsn_TLgk5aX-ev86DH5EE&callback=initMap"></script>
 </body>
 
 </html>

@@ -49,265 +49,312 @@ a:visited {
 /*長方形ボタン*/
 
 .btn-gradient-3d-orange {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 4px;
-  color: #ffffff;
-  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #c58668;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #ffffff;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #c58668;
 }
 
 .btn-gradient-3d-orange:active {
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
-  border-bottom: none;
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+/*このクラスがついたら表示*/
+.-fixed{
+    display: block;
 }
 
 /*****************************************************************
 ** ヘッダー
 ******************************************************************/
+    header {
+        display: none;
+        background: #fff;
+        opacity: 0.7;
+        position: fixed;
+        z-index: 10000;
+        width: 100%;
+        height: 70px;
+    }
 
-header {
-    background: #fff;
-    opacity: 0.7;
-    position: fixed;
-    z-index: 10000;
-    width: 100%;
-    height: 70px;
-}
+    header p {
+        text-align: center;
+        font-weight: 700;
+        font-family: 'Sora', sans-serif;
+        line-height: 70px;
+        font-size: 36px;
+    }
 
-header p {
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Sora', sans-serif;
-    line-height: 70px;
-    font-size: 36px;
-}
-
-/*****************************************************************
+    /*****************************************************************
 ** ヒーローイメージ
 *******************************************************************/
+    #hero_box {
+        background-image: url("../images/breakfast.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 100%;
+    }
 
-#hero_box {
-    background-image: url("../images/breakfast.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100%;
-}
+    #hero_box>div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
 
-#hero_box>div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-}
+    #hero_title {
+        color: rgb(221, 219, 219);
+    }
 
-#hero_title {
-    color: rgb(221, 219, 219);
-}
+    #hero_title h1 {
+        text-align: center;
+        font-family: 'Roboto Slab', serif;
+        font-size: 64px;
+    }
 
-#hero_title h1 {
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    font-size: 64px;
-}
+    #hero_title p {
+        text-align: center;
+        font-family: 'Noto Serif JP', serif;
+        font-size: 12px;
+    }
 
-#hero_title p {
-    text-align: center;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 12px;
-}
+    #hero_button {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 400;
+        margin: 40px 20px 0;
+    }
 
-#hero_button {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 400;
-    margin: 40px 20px 0;
-}
-
-/*****************************************************************
+    /*****************************************************************
 ** 条件検索
 *******************************************************************/
+    #surch_box {
+        background-image: url("../images/background_pizza.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-family: 'Noto Sans JP', sans-serif;
+        /*モバイル仕様*/
+        height: 90%;
+    }
 
-#surch_box {
-    background-image: url("../images/background_pizza.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    font-family: 'Noto Sans JP', sans-serif;
-    /*モバイル仕様*/
-    height: 90%;
-}
 
+    /*条件検索フォーム*/
+    #surch_form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        width: 90%;
+        height: 80%;
+        background-color: white;
+        ;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
 
-/*条件検索フォーム*/
+    /*枠線の設定 */
+    #surch_form>div {
+        height: 16.667%;
+        border: 1px solid #ccc;
+    }
 
-#surch_form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    width: 90%;
-    height: 80%;
-    background-color: white;
-    ;
-    border-radius: 10px;
-    margin: 0 auto;
-}
+    #surch_form>div:first-child {
+        border-bottom: none;
+    }
 
-/*枠線の設定 */
+    #surch_form>div:nth-child(2) {
+        border-top: none;
+    }
 
-#surch_form>div {
-    height: 16.667%;
-    border: 1px solid #ccc;
-}
+    /*各ブロックの設定*/
+    #distance_label {
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 
-#surch_form>div:first-child {
-    border-bottom: none;
-}
+    #distance_label p:first-child {
+        margin: 0 auto;
+        text-align: center;
+        padding: 1% 0;
+        border-radius: 100px;
+        width: 50%;
+        background: #ff9513;
+        color: #ffffff;
+    }
 
-#surch_form>div:nth-child(2) {
-    border-top: none;
-}
+    #distance_label p:nth-child(2) {
+        padding-left: 5%;
+    }
 
-/*各ブロックの設定*/
+    #distance_label p {
+        font-size: 20px;
+    }
 
-#distance_label {
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    flex-direction:column;
-    justify-content:space-around;
-}
+    #distance_serect {
+        margin: 0 5%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-#distance_label p:first-child{
-    margin: 0 auto;
-    text-align: center;
-    padding: 1% 0;
-    border-radius:100px;
-    width: 50%;
-    background:#ff9513;
-    color:#ffffff;
-}
+    #distance_serect>div {
+        margin-right: 20px;
+    }
 
-#distance_label p:nth-child(2){
-    padding-left: 5%;
-}
+    #distance_serect input {
+        margin-top: 0;
+        width: 15px;
+        height: 15px;
+    }
 
-#distance_label p {
-    font-size: 20px;
-}
+    #distance_serect label {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
 
-#distance_serect {
-    margin: 0 5%;
-    display: flex;
-    flex-wrap:wrap;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
+    .radio_serect_box {
+        display: flex;
+        font-size: 12px;
+    }
 
-#distance_serect>div{
-    margin-right: 20px;
-}
+    .radio_serect_box>div {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        height: 100%;
+    }
 
-#distance_serect input {
-    margin-top: 0;
-    width: 15px;
-    height: 15px;
-}
+    .radio_serect_box label {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
 
-#distance_serect label {
-    font-size: 20px;
-    margin-bottom: 0;
-}
+    .radio_serect_box>div:first-child {
+        border-right: 1px solid #ccc;
+    }
 
-.radio_serect_box {
-    display: flex;
-    font-size: 12px;
-}
+    .radio_serect_box input {
+        margin: 0 0 0 10px;
+        width: 15px;
+        height: 15px;
+    }
 
-.radio_serect_box>div {
-    display: flex;
-    width: 50%;
-    align-items: center;
-    height: 100%;
-}
+    #freeword_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.radio_serect_box label {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
+    #freeword_box input {
+        width: 80%;
+        height: 50%;
+        font-size: 16px;
+    }
 
-.radio_serect_box>div:first-child {
-    border-right: 1px solid #ccc;
-}
+    #surch_button_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 10px 10px;
+    }
 
-.radio_serect_box input{
-    margin: 0 0 0 10px;
-    width: 15px;
-    height: 15px;
-}
+    #surch_button_box a {
+        width: 80%;
+        height: 50%;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+    }
 
-#freeword_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    #surch_box i {
+        color: rgb(234, 125, 9);
+        font-size: 16px;
+        margin-right: 10px;
+    }
 
-#freeword_box input {
-    width: 80%;
-    height: 50%;
-    font-size:16px;
-}
-
-#surch_button_box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 10px 10px;
-}
-
-#surch_button_box a{
-    width: 80%;
-    height: 50%;
-    text-align: center;
-    color:white;
-    font-size:16px;
-}
-
-#surch_box i{
-    color:rgb(234,125,9);
-    font-size:16px;
-    margin-right: 10px;
-}
-
-/******************************************************************
+    /******************************************************************
 ** フッター
 *******************************************************************/
+    footer {
+        background: rgba(156, 156, 156, 0.58);
+        align-items: center;
+        color: rgb(29, 161, 242);
+    }
 
-footer {
-    background: rgba(156, 156, 156, 0.58);
-    align-items: center;
-    color: rgb(29, 161, 242);
-}
 
-
-footer p {
-    line-height: 3;
-    text-align: center;
-    font-size: 12px;
-    color: black;
-    font-family: 'Sora', sans-serif;
-}
+    footer p {
+        line-height: 3;
+        text-align: center;
+        font-size: 12px;
+        color: black;
+        font-family: 'Sora', sans-serif;
+    }
 
 /******************************************************************
 ** スクロールボタン
 *******************************************************************/
+    #page_top {
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        background: black;
+        opacity: 0.6;
+        border-radius: 50%;
+    }
+
+    #page_top span {
+        position: relative;
+        display: block;
+        width: 90px;
+        height: 90px;
+        text-decoration: none;
+    }
+
+    #page_top span::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f102';
+        font-size: 25px;
+        color: #fff;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+    }
+
+    #page_top span::after {
+        content: 'PAGE TOP';
+        font-size: 13px;
+        color: #fff;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+    }

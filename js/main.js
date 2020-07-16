@@ -1,18 +1,22 @@
 Vue.component('paginate', VuejsPaginate)
 
 /***************************************************************
-** Vueインスタンスの生成
-****************************************************************/
+ ** Vueインスタンスの生成
+ ****************************************************************/
 
 var app = new Vue({
     el: "#app",
     data: {
+        // グーグルマップ設定
         lat: 35.6809591,
         lng: 139.7673068,
         result: "",
 
+        // ページネーション設定
         parPage: 10,
-        currentPage: 1
+        currentPage: 1,
+
+        scrollY: 0
     },
     watch: {
         // この関数は result が変わるごとに実行される
@@ -35,10 +39,32 @@ var app = new Vue({
             });
         }
     },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
     methods: {
         // ページネーションクリック時にcurrentPageを更新
         clickCallback: function(pageNum) {
             this.currentPage = Number(pageNum);
+        },
+
+        // スクロールイベント
+        scrollTop: function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        },
+        scrollBottom: function() {
+            window.scrollTo({
+                top: 700,
+                behavior: "smooth"
+            });
+        },
+
+
+        handleScroll() {
+            this.scrollY = window.scrollY
         }
     },
     computed: {
@@ -52,15 +78,15 @@ var app = new Vue({
         },
         // ページネーションの最大ページ数を求める
         getPageCount: function() {
-            if(this.result!=="") // resultが存在するときのみ実行
+            if (this.result !== "") // resultが存在するときのみ実行
                 return Math.ceil(this.result.rest.length / this.parPage);
         }
     }
 })
 
 /***************************************************************
-** グーグルマップの初期設定+現在地周辺の飲食店データの取得
-****************************************************************/
+ ** グーグルマップの初期設定+現在地周辺の飲食店データの取得
+ ****************************************************************/
 
 function initMap() {
     let lat, lng, i;
