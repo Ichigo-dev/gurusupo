@@ -14,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
     <!--Bootstrap 3.3.5-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
+    <!--vue-js-modal-->
+    <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/index.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/styles.css">
     <!--main.css-->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <!--Vue.js-->
@@ -38,31 +41,42 @@
                 <p>現在地周辺に飲食店は見つかりませんでした</p>
                 <i class="fa fa-search"></i>
             </div>
+
             <div id="map"></div>
 
 
             <div id="result_box" v-show="result">
                 <div class="result_item" v-for="(item,index) in getItems">
-                    <div>
+                    <aside>
                         <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
-                    </div>
-                    <i class="fas fa-info-circle"></i>
-                    <i class="fas fa-star" @click="setKeep($event,index)"></i>
+                    </aside>
+                    <i class="fas fa-info-circle" @click="show('surch')"></i>
+                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
+                    
+                    <modal name="surch" :draggable="true" :resizable="true">
+                        <div class="modal-header">
+                            <h2>Modal title</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>you're reading this text in a modal!</p>
+                            <button v-on:click="hide('surch')">閉じる</button>
+                        </div>
+                    </modal>
                 </div>
-                
+
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
                 </paginate>
             </div>
 
             <div class="guide_box">
                 <ul>
-                    <li>・気になるお店のキープアイコンをクリックすることでキープすることが出来ます</li>
-                    <li>・キープされたお店はページを離れるまでキープアイコンの色が変わり、マップ上の表示も変わります</li>
-                    <li>・もう一度クリックすることでキープ状態を解除できます</li>
-                    <li>・右下にある<i class="fas fa-info-circle"></i>からより詳しい情報を見ることが出来ます</li>
-                    <li>・ページの右上にある<i class="fa fa-search"></i>から条件を変更できます</li>
-                    <li>・お店が見つからない場合は条件を変えて検索してください</li>
+                    <li>・気になるお店のキープアイコンをクリックすることでキープすることが出来ます。</li>
+                    <li>・キープされたお店はページを離れるまでマップ上のマーカーの色が変わります。</li>
+                    <li>・もう一度クリックすることでキープ状態を解除できます。</li>
+                    <li>・右下にある<i class="fas fa-info-circle"></i>からより詳しい情報を見ることが出来ます。</li>
+                    <li>・ページの右上にある<i class="fa fa-search"></i>から条件を変更できます。</li>
+                    <li>・お店が見つからない場合は条件を変えて検索してください。</li>
                 </ul>
             </div>
         </div>
