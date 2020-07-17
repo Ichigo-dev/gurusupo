@@ -51,8 +51,8 @@
                         <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </aside>
-                    <i class="fas fa-info-circle" @click="show('surch')"></i>
-                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}"></i>
+                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
                 </div>
 
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">

@@ -61,6 +61,14 @@ var app = new Vue({
             this.currentPage = Number(pageNum);
         },
 
+        // モーダル
+        show: function(item) {
+            this.$modal.show(item);
+        },
+        hide: function(item) {
+            this.$modal.hide(item);
+        },
+
         // スクロールイベント
         scrollTop: function() {
             window.scrollTo({
