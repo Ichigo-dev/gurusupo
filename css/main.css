@@ -41,7 +41,7 @@ a:visited {
     border-radius: 25px;
     text-decoration: none;
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-    transition: .4s;
+    transition: 1s;
     font-size: 16px;
     padding: 7px 15px;
 }
@@ -120,7 +120,7 @@ header p {
 
 #hero_title {
     color: rgb(221, 219, 219);
-    text-shadow:1px 0px 8px black;
+    text-shadow: 1px 0px 8px black;
 }
 
 #hero_title h1 {
@@ -370,7 +370,7 @@ footer p {
 /*コンテナ*/
 
 .container {
-    min-height:100%;
+    min-height: 100%;
     padding: 70px 0 0;
     width: 100%;
     background-image: url("../images/modan_background.jpg");
@@ -383,6 +383,7 @@ footer p {
     height: 300px;
     width: 80%;
     margin: 0 auto 20px;
+    border-radius:5px;
 }
 
 #page_info {
@@ -394,9 +395,9 @@ footer p {
     margin: 0 0 20px;
 }
 
-#page_info>i{
+#page_info>i {
     font-weight: 600;
-    font-size:16px;
+    font-size: 16px;
 }
 
 /***************************************************************
@@ -419,8 +420,10 @@ footer p {
     border-bottom: 1px solid #d2d2d2;
     width: 47%;
     margin: 0 auto 10px;
+    background:white;
     border-radius: 5px;
     font-family: 'Noto Sans JP', sans-serif;
+    position:relative;
 }
 
 .result_item:first-child,
@@ -430,14 +433,6 @@ footer p {
 
 .result_item:last-child {
     border-bottom: none;
-}
-
-.result_item:nth-child(odd) {
-    background: white;
-}
-
-.result_item:nth-child(even) {
-    background: white;
 }
 
 .result_item>div {
@@ -463,11 +458,27 @@ footer p {
     font-size: 12px;
 }
 
-.result_item i {
+/*ピンアイコン*/
+
+.result_item p i {
     font-weight: 600;
     margin-right: 5px;
     font-size: 16px;
     color: #ff8100;
+}
+
+/*インフォメーションアイコン*/
+
+.result_item>i {
+    color: #bdb7b7;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 16px;
+}
+
+.result_item>i:hover{
+    color:#a5a5a5;
 }
 
 .result_item .gurunabi_link {
@@ -479,4 +490,29 @@ footer p {
     display: block;
 }
 
+/*案内*/
 
+.guide_box{
+    width: 90%;
+    background:#ffffff;
+    margin: 20px auto;
+    border-radius:5px;
+}
+
+.guide_box ul{
+    list-style:none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.guide_box li{
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #5f5d58;
+    transition:all .1s;
+}
+
+.guide_box li:hover{
+    font-size: 12.5px;
+    color:#000000;
+}
