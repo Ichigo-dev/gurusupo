@@ -7,15 +7,19 @@ Vue.component('paginate', VuejsPaginate)
 var app = new Vue({
     el: "#app",
     data: {
-        // グーグルマップ,グルナビ設定
+        // グーグルマップ設定
         lat: 35.6809591,
         lng: 139.7673068,
-        range: 2,
+        marker: {},
+
+        // グルナビ設定
+        range: 5,
         wifi: 0,
         parking: 0,
         e_money: 0,
         card: 0,
         freeword: "",
+        keep: {},
         result: "",
 
         // ページネーション設定
@@ -29,7 +33,7 @@ var app = new Vue({
         result: function() {
             this.result.rest.map((item, index) => {
                 //地図中に各店舗のマーカーを作成
-                marker = new google.maps.Marker({
+                this.marker[index] = new google.maps.Marker({
                     position: new google.maps.LatLng(item.latitude, item.longitude),
                     title: item.name,
                     label: {
@@ -41,7 +45,10 @@ var app = new Vue({
                 });
 
                 // マーカーを地図中にセットする
-                marker.setMap(map);
+                this.marker[index].setMap(map);
+
+                //キープ機能用変数にfalseを代入する
+                this.keep[index] = false;
             });
         }
     },
@@ -67,11 +74,45 @@ var app = new Vue({
                 behavior: "smooth"
             });
         },
+        setKeep: function(event, index) {
+            this.$set(this.keep, index, !this.keep[index]);
+            console.log(this.keep[index]);
+            event.target.classList.toggle("keep");
 
+            if (this.keep[index] === true) {
+                this.marker[index].setMap(null);
+                this.marker[index] = new google.maps.Marker({
+                    position: new google.maps.LatLng(this.result.rest[index].latitude, this.result.rest[index].longitude),
+                    title: this.result.rest[index].name,
+                    icon:{
+                        url:"https://lh3.googleusercontent.com/djp9vfJHgjgd4NE1F7P1GoCGYc034PeW2iZAldpuvtsexX1i0meGaQLBhqK4LRRnJy2-PZD1ZFUjuN9BZj5wk8dry75H2eirFW60Qbg1vHe0WexAu0o-nKYjdiv7FPNgHiQv8aFSnRVG9xN-EFGCe4MKgSEkmeVBrdGBdix8lnATRB3LuS3h1tEwtDG1m_YLC-_meF8Eoc9TfeSO3-UUv6rTwvVDHqLG52W7Wqfb_olrSjzO-CMWhkI44GBj6dN6dp0reJQscgyWLd6boYl1tPuvmdQxYRW9weqqS-rol8RcSqzEZtck_nzztC8vALJ5BdUjCAaQ4clRB4O0R-P81XkWR_kfPX2tra3dfZ-8K5_gxolOal6o2G3Mitxt2fJsUggo-MnU36F-eVkylAcwYge_Z3BzSSuWoN1nOH1K0MC9fr_-FuJYbXlTX_oppVuK3EXgcy7IgyEM1oQ331vss8jlS4PJaoo44VL3hgvhVQashJThFj4yCT9g-ekARuvPYL3ZjPzzdtUQrRfFNmv1Lscs8iDNdiG3A9plqY9hiW2EiycJeaM9W0yPG6effmAaT9p4QtzpvkPEOb-qFEqUn6rqCYx6vqLh2u9E3c1Z7eym08iEWdJtMtORvdgfSjfyD8D3YAryJTUjcF9ZohL5k9dWRvKZHWJA_3rgxwYz5gYvf3JtMoA-GtxYpzTIEA=s256-no?authuser=0",
+                        scaledSize: new google.maps.Size(43, 43)
+                    }
+                });
 
+                // マーカーを地図中にセットする
+                this.marker[index].setMap(map);
+            }
+            else {
+                this.marker[index].setMap(null);
+                this.marker[index] = new google.maps.Marker({
+                    position: new google.maps.LatLng(this.result.rest[index].latitude, this.result.rest[index].longitude),
+                    title: this.result.rest[index].name,
+                    label: {
+                        text: String(index + 1),
+                        color: "#fff",
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    },
+                });
+
+                // マーカーを地図中にセットする
+                this.marker[index].setMap(map);
+            }
+        },
         handleScroll() {
             this.scrollY = window.scrollY
-        }
+        },
     },
     computed: {
         // 現在ページのアイテムを返す
@@ -86,7 +127,7 @@ var app = new Vue({
         getPageCount: function() {
             if (this.result !== "") // resultが存在するときのみ実行
                 return Math.ceil(this.result.rest.length / this.parPage);
-        }
+        },
     }
 })
 

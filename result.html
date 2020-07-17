@@ -48,23 +48,23 @@
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </div>
                     <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-star" @click="setKeep($event,index)"></i>
                 </div>
+                
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
                 </paginate>
             </div>
 
             <div class="guide_box">
                 <ul>
-                    <li>・気になるお店をクリックすることでキープすることが出来ます</li>
-                    <li>・キープされたお店はページを離れるまで色が変わり、マップ上の表示も変わります</li>
+                    <li>・気になるお店のキープアイコンをクリックすることでキープすることが出来ます</li>
+                    <li>・キープされたお店はページを離れるまでキープアイコンの色が変わり、マップ上の表示も変わります</li>
                     <li>・もう一度クリックすることでキープ状態を解除できます</li>
                     <li>・右下にある<i class="fas fa-info-circle"></i>からより詳しい情報を見ることが出来ます</li>
                     <li>・ページの右上にある<i class="fa fa-search"></i>から条件を変更できます</li>
                     <li>・お店が見つからない場合は条件を変えて検索してください</li>
                 </ul>
             </div>
-
-
         </div>
 
         <!--フッター-->
