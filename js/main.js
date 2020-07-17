@@ -1,7 +1,4 @@
 Vue.component('paginate', VuejsPaginate)
-const VModal = window["vue-js-modal"].default
-
-Vue.use(VModal);
 
 /***************************************************************
  ** Vueインスタンスの生成
@@ -64,14 +61,6 @@ var app = new Vue({
             this.currentPage = Number(pageNum);
         },
 
-        // モーダル
-        show: function(item) {
-            this.$modal.show(item);
-        },
-        hide: function(item) {
-            this.$modal.hide(item);
-        },
-
         // スクロールイベント
         scrollTop: function() {
             window.scrollTo({
@@ -105,7 +94,7 @@ var app = new Vue({
                     position: new google.maps.LatLng(this.result.rest[item_index].latitude, this.result.rest[item_index].longitude),
                     title: this.result.rest[item_index].name,
                     icon: {
-                        url: "https://lh3.googleusercontent.com/djp9vfJHgjgd4NE1F7P1GoCGYc034PeW2iZAldpuvtsexX1i0meGaQLBhqK4LRRnJy2-PZD1ZFUjuN9BZj5wk8dry75H2eirFW60Qbg1vHe0WexAu0o-nKYjdiv7FPNgHiQv8aFSnRVG9xN-EFGCe4MKgSEkmeVBrdGBdix8lnATRB3LuS3h1tEwtDG1m_YLC-_meF8Eoc9TfeSO3-UUv6rTwvVDHqLG52W7Wqfb_olrSjzO-CMWhkI44GBj6dN6dp0reJQscgyWLd6boYl1tPuvmdQxYRW9weqqS-rol8RcSqzEZtck_nzztC8vALJ5BdUjCAaQ4clRB4O0R-P81XkWR_kfPX2tra3dfZ-8K5_gxolOal6o2G3Mitxt2fJsUggo-MnU36F-eVkylAcwYge_Z3BzSSuWoN1nOH1K0MC9fr_-FuJYbXlTX_oppVuK3EXgcy7IgyEM1oQ331vss8jlS4PJaoo44VL3hgvhVQashJThFj4yCT9g-ekARuvPYL3ZjPzzdtUQrRfFNmv1Lscs8iDNdiG3A9plqY9hiW2EiycJeaM9W0yPG6effmAaT9p4QtzpvkPEOb-qFEqUn6rqCYx6vqLh2u9E3c1Z7eym08iEWdJtMtORvdgfSjfyD8D3YAryJTUjcF9ZohL5k9dWRvKZHWJA_3rgxwYz5gYvf3JtMoA-GtxYpzTIEA=s256-no?authuser=0",
+                        url: "https://lh3.googleusercontent.com/qY0bI-W6usHWmi3Y3N2klUSPnlD0QhFeenfJxtbZisbqeFbKHxW7q5ZZJ5yO3YPWfBA1qdLdqmdts4qVF-gggMUnFEZtuhtXYRMltOvVXFteGvupoc1-wQy0Fi1fwx9qe7U-zx_YDA=s256-p-k",
                         scaledSize: new google.maps.Size(43, 43)
                     }
                 });

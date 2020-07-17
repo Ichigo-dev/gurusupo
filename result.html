@@ -52,17 +52,7 @@
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </aside>
                     <i class="fas fa-info-circle" @click="show('surch')"></i>
-                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
-                    
-                    <modal name="surch" :draggable="true" :resizable="true">
-                        <div class="modal-header">
-                            <h2>Modal title</h2>
-                        </div>
-                        <div class="modal-body">
-                            <p>you're reading this text in a modal!</p>
-                            <button v-on:click="hide('surch')">閉じる</button>
-                        </div>
-                    </modal>
+                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}"></i>
                 </div>
 
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
