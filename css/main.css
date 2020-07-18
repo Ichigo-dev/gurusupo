@@ -434,7 +434,7 @@ footer p {
     border-bottom: none;
 }
 
-.result_item>aside {
+.result_item aside {
     width: 90%;
     margin: 0 auto;
 }
@@ -468,7 +468,7 @@ footer p {
 
 /*インフォメーションアイコン*/
 
-.result_item>.fa-info-circle {
+.result_item .fa-info-circle {
     color: #bdb7b7;
     position: absolute;
     bottom: 10px;
@@ -476,7 +476,7 @@ footer p {
     font-size: 16px;
 }
 
-.result_item>.fa-info-circle:hover{
+.result_item .fa-info-circle:hover{
     color:#a5a5a5;
 }
 
@@ -528,6 +528,6 @@ footer p {
 /***************************************************************
 ** モーダル
 ****************************************************************/
-.v--model-overlay{
-    width: 100%;
+.hooper{
+    height:100%;
 }

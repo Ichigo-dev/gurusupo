@@ -14,9 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
     <!--Bootstrap 3.3.5-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css">
-    <!--vue-js-modal-->
-    <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/index.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/styles.css">
+    <!--hooper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hooper@0.2.1/dist/hooper.css">
+    <script src="https://cdn.jsdelivr.net/npm/hooper@0.2.1/dist/hooper.min.js"></script>
     <!--main.css-->
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <!--Vue.js-->
@@ -44,15 +44,24 @@
 
             <div id="map"></div>
 
-
             <div id="result_box" v-show="result">
                 <div class="result_item" v-for="(item,index) in getItems">
-                    <aside>
-                        <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
-                        <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
-                    </aside>
-                    <i class="fas fa-info-circle"></i>
-                    <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
+                    <hooper>
+                        <slide>
+                            <aside>
+                                <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
+                                <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
+                            </aside>
+                            <!--<i class="fas fa-info-circle"></i>-->
+                            <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
+                        </slide>
+                        <slide>
+                            <a :href="item.url">pc版サイト</a>
+                            <a :href="item.url_mobile">スマホ版サイト</a>
+                            <p>{{item.tel}}</p>
+                        </slide>
+                    </hooper>
+
                 </div>
 
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">

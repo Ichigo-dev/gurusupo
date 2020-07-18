@@ -28,6 +28,12 @@ var app = new Vue({
 
         scrollY: 0
     },
+    components: {
+        Hooper: window.Hooper.Hooper,
+        Slide: window.Hooper.Slide,
+        HooperNavigation: window.Hooper.HooperNavigation,
+        HooperPagination: window.Hooper.HooperPagination
+    },
     watch: {
         // この関数は result が変わるごとに実行される
         result: function() {
