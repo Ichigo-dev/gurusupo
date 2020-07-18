@@ -37,7 +37,7 @@
                 <!--検索ボタン-->
                 <div id="hero_button">
                     <!--いますぐ検索-->
-                    <a href="result.html" class="btn-gradient-radius">いますぐ検索</a>
+                    <a href="result.html?" class="btn-gradient-radius">いますぐ検索</a>
                     <!--条件検索-->
                     <a  @click.prevent.stop="scrollBottom" class="btn-gradient-radius">条件から絞り込む</a>
                 </div>
@@ -56,23 +56,23 @@
                 <div id="distance_serect_box">
                     <div id=distance_serect>
                         <div>
-                            <input type="radio" name="radio" class="radio-input" id="radio-01">
+                            <input type="radio" value="1" v-model="rengeNum" name="radio" class="radio-input" id="radio-01">
                             <label for="radio-01">0.3km</label>
                         </div>
                         <div>
-                            <input type="radio" name="radio" class="radio-input" id="radio-02">
+                            <input type="radio" value="2" v-model="rengeNum" name="radio" class="radio-input" id="radio-02">
                             <label for="radio-02">0.5km</label>
                         </div>
                         <div>
-                            <input type="radio" name="radio" class="radio-input" id="radio-03">
+                            <input type="radio" value="3" v-model="rengeNum" name="radio" class="radio-input" id="radio-03">
                             <label for="radio-03">1.0km</label>
                         </div>
                         <div>
-                            <input type="radio" name="radio" class="radio-input" id="radio-04">
+                            <input type="radio" value="4" v-model="rengeNum" name="radio" class="radio-input" id="radio-04">
                             <label for="radio-04">2.0km</label>
                         </div>
                         <div>
-                            <input type="radio" name="radio" class="radio-input" id="radio-05">
+                            <input type="radio" value="5" v-model="rengeNum" name="radio" class="radio-input" id="radio-05">
                             <label for="radio-05">3.0km</label>
                         </div>
                     </div>
@@ -82,14 +82,14 @@
                     <div>
                         <label>
                             <span class="checkbox-parts"><i class="far fa-credit-card"></i>カード利用可</span>
-                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                            <input type="checkbox" v-model="isCard" class="checkbox-input">
                         </label>
                     </div>
 
                     <div>
                         <label>
                             <span class="checkbox-parts"><i class="fas fa-mobile-alt"></i>電子マネー利用可</span>
-                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                            <input type="checkbox" v-model="isE_money" class="checkbox-input">
                         </label>
                     </div>
                 </div>
@@ -97,21 +97,21 @@
                     <div>
                         <label>
                             <span class="checkbox-parts"><i class="fas fa-parking"></i>駐車場有り</span>
-                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                            <input type="checkbox" v-model="isParking" class="checkbox-input">
                         </label>
                     </div>
                     <div>
                         <label>
                             <span class="checkbox-parts"><i class="fas fa-wifi"></i>WIFI有り</span>
-                            <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                            <input type="checkbox" v-model="isWifi" class="checkbox-input">
                         </label>
                     </div>
                 </div>
                 <div id="freeword_box">
-                    <i class="fas fa-pen"></i><input type="serch" placeholder="フリーワード　例）名前、住所">
+                    <i class="fas fa-pen"></i><input type="serch" v-model="freeInput" placeholder="フリーワード　例）名前、住所">
                 </div>
                 <div id="surch_button_box">
-                    <a href="result.html" class="btn-gradient-3d-orange">検索</a>
+                    <a href="result.html" @click.prevent="getUrl" class="btn-gradient-3d-orange">検索</a>
                 </div>
             </div>
         </div>
