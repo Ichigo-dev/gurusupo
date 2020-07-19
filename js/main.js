@@ -15,6 +15,9 @@ var app = new Vue({
         isWifi: false,
         freeInput: "",
         url: "result.html?",
+        
+        // 再検索アコーディオンメニュー
+        isOpened:false,
 
         // グーグルマップ設定
         lat: 35.6809591,

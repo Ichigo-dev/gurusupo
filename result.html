@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <title>ぐるスポ</title>
+    <title>GURUSUPO 検索結果|あなたの生活を少しだけ豊かにする飲食店検索サイト|</title>
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!--Google Fonts-->
@@ -33,13 +33,86 @@
         </header>
 
         <div class="container">
-            <div id="page_info" v-show="result">
-                <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
-                <i class="fa fa-search"></i>
-            </div>
-            <div id="page_info" v-show="!result">
-                <p>現在地周辺に飲食店は見つかりませんでした</p>
-                <i class="fa fa-search"></i>
+            <div id="page_info_box">
+                <div id="page_info" v-show="result">
+                    <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
+                    <i class="fa fa-search" @click="isOpened=!isOpened"></i>
+                </div>
+                <div id="page_info" v-show="!result">
+                    <p>現在地周辺に飲食店は見つかりませんでした</p>
+                    <i class="fa fa-search" @click="isOpened=!isOpened"></i>
+                </div>
+
+                <transition name="trans_slide">
+                    <div class="resurch_box" v-show="isOpened">
+                        <div>
+                            <h3><i class="fas fa-map-marker-alt"></i>範囲</h3>
+                            <div id=distance_reserect>
+                                <div>
+                                    <input type="radio" value="1" v-model="rengeNum" name="radio" class="radio-input" id="radio-01">
+                                    <label for="radio-01">0.3km</label>
+                                </div>
+                                <div>
+                                    <input type="radio" value="2" v-model="rengeNum" name="radio" class="radio-input" id="radio-02">
+                                    <label for="radio-02">0.5km</label>
+                                </div>
+                                <div>
+                                    <input type="radio" value="3" v-model="rengeNum" name="radio" class="radio-input" id="radio-03">
+                                    <label for="radio-03">1.0km</label>
+                                </div>
+                                <div>
+                                    <input type="radio" value="4" v-model="rengeNum" name="radio" class="radio-input" id="radio-04">
+                                    <label for="radio-04">2.0km</label>
+                                </div>
+                                <div>
+                                    <input type="radio" value="5" v-model="rengeNum" name="radio" class="radio-input" id="radio-05">
+                                    <label for="radio-05">3.0km</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="radio_reserect_box">
+                            <div>
+                                <label>
+                                    <span class="checkbox-parts"><i class="far fa-credit-card"></i>カード利用可</span>
+                                    <input type="checkbox" v-model="isCard" class="checkbox-input">
+                                </label>
+                            </div>
+
+                            <div>
+                                <label>
+                                    <span class="checkbox-parts"><i class="fas fa-mobile-alt"></i>電子マネー利用可</span>
+                                    <input type="checkbox" v-model="isE_money" class="checkbox-input">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="radio_reserect_box">
+                            <div>
+                                <label>
+                                    <span class="checkbox-parts"><i class="fas fa-parking"></i>駐車場有り</span>
+                                    <input type="checkbox" v-model="isParking" class="checkbox-input">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span class="checkbox-parts"><i class="fas fa-wifi"></i>WIFI有り</span>
+                                    <input type="checkbox" v-model="isWifi" class="checkbox-input">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="refreeword_box">
+                            <i class="fas fa-pen"></i><input type="serch" v-model="freeInput" placeholder="フリーワード　例）名前、住所">
+                        </div>
+
+                        <div id="resurch_button_box">
+                            <a href="result.html" @click.prevent="getUrl" class="btn-gradient-3d-orange">検索</a>
+                        </div>
+                    </div>
+                </transition>
+
             </div>
 
             <div id="map"></div>

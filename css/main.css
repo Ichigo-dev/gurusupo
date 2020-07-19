@@ -383,7 +383,11 @@ footer p {
     height: 300px;
     width: 80%;
     margin: 0 auto 20px;
-    border-radius:5px;
+    border-radius: 5px;
+}
+
+#page_info_box {
+    margin-bottom: 20px;
 }
 
 #page_info {
@@ -392,7 +396,6 @@ footer p {
     align-items: center;
     background: #ffa04e;
     height: 30px;
-    margin: 0 0 20px;
 }
 
 #page_info>i {
@@ -419,10 +422,10 @@ footer p {
     border-bottom: 1px solid #d2d2d2;
     width: 47%;
     margin: 0 auto 10px;
-    background:white;
+    background: white;
     border-radius: 5px;
     font-family: 'Noto Sans JP', sans-serif;
-    position:relative;
+    position: relative;
 }
 
 .result_item:first-child,
@@ -434,7 +437,7 @@ footer p {
     border-bottom: none;
 }
 
-.result_item>aside {
+.result_item aside {
     width: 90%;
     margin: 0 auto;
 }
@@ -468,7 +471,7 @@ footer p {
 
 /*インフォメーションアイコン*/
 
-.result_item>.fa-info-circle {
+.result_item .fa-info-circle {
     color: #bdb7b7;
     position: absolute;
     bottom: 10px;
@@ -476,12 +479,13 @@ footer p {
     font-size: 16px;
 }
 
-.result_item>.fa-info-circle:hover{
-    color:#a5a5a5;
+.result_item .fa-info-circle:hover {
+    color: #a5a5a5;
 }
 
 /*キープアイコン*/
-.fa-star{
+
+.fa-star {
     color: #bdb7b7;
     position: absolute;
     bottom: 10px;
@@ -489,8 +493,8 @@ footer p {
     font-size: 16px;
 }
 
-.keep{
-    color:#f1de04;
+.keep {
+    color: #f1de04;
 }
 
 .pagination {
@@ -500,34 +504,122 @@ footer p {
 
 /*案内*/
 
-.guide_box{
+.guide_box {
     width: 90%;
-    background:#ffffff;
+    background: #ffffff;
     margin: 20px auto;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
-.guide_box ul{
-    list-style:none;
+.guide_box ul {
+    list-style: none;
     padding: 20px 0;
     margin: 0;
 }
 
-.guide_box li{
+.guide_box li {
     padding: 10px 20px;
     font-size: 12px;
     color: #5f5d58;
-    transition:all .1s;
+    transition: all .1s;
 }
 
-.guide_box li:hover{
+.guide_box li:hover {
     font-size: 12.5px;
-    color:#000000;
+    color: #000000;
 }
 
 /***************************************************************
-** モーダル
+** 再検索用メニュー
 ****************************************************************/
-.v--model-overlay{
-    width: 100%;
+
+.resurch_box {
+    background: white;
+    height: 220px;
+    overflow: hidden;
+}
+
+.resurch_box>div {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.resurch_box h3 {
+    font-size: 16px;
+}
+
+.resurch_box i {
+    color: #ff8100;
+    margin-right: 8px;
+}
+
+#distance_reserect {
+    margin: 10px auto 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#distance_reserect input {
+    margin: 0;
+}
+
+#distance_reserect label {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+.radio_reserect_box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio_reserect_box span {
+    font-weight: 400;
+}
+
+.radio_reserect_box label {
+    margin: 0;
+}
+
+#refreeword_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#refreeword_box input {
+    width: 80%;
+    height: 50%;
+    font-size: 16px;
+}
+
+#resurch_button_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+}
+
+#resurch_button_box a {
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+
+/* Vueの方で自動的に付与されるクラス::-enter-xx */
+
+.trans_slide-enter-active,
+.trans_slide-leave-active {
+    transition: all .3s;
+}
+
+.trans_slide-enter,
+.trans_slide-leave-to {
+    height: 0;
 }
