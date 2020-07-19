@@ -15,9 +15,9 @@ var app = new Vue({
         isWifi: false,
         freeInput: "",
         url: "result.html?",
-        
+
         // 再検索アコーディオンメニュー
-        isOpened:false,
+        isOpened: false,
 
         // グーグルマップ設定
         lat: 35.6809591,
@@ -34,6 +34,8 @@ var app = new Vue({
         keep: {},
         result: "",
 
+        // 奇数か偶数か
+        isAddOrEven: false,
         // ページネーション設定
         parPage: 10,
         currentPage: 1,
@@ -62,6 +64,9 @@ var app = new Vue({
                 //キープ機能用変数にfalseを代入する
                 this.$set(this.keep, index, false);
             });
+
+            // 奇数調整用のブロックが必要か判断
+            this.AddOrEven();
         },
     },
     created: function() {
@@ -94,24 +99,24 @@ var app = new Vue({
             // パラメータ名に応じてdataプロパティに入力
             switch (keyName) {
                 case "range":
-                    this.range=Number(keyValue);
+                    this.range = Number(keyValue);
                     break;
                 case "card":
-                    this.card=Number(keyValue);
+                    this.card = Number(keyValue);
                     break;
                 case "e_money":
-                    this.e_money=Number(keyValue);
+                    this.e_money = Number(keyValue);
                     break;
                 case "parking":
-                    this.parking=Number(keyValue);
+                    this.parking = Number(keyValue);
                     break;
                 case "wifi":
-                    this.wifi=Number(keyValue);
+                    this.wifi = Number(keyValue);
                     break;
                 case "freeword":
                     // デコード
                     var word = decodeURIComponent(keyValue)
-                    this.freeword=word;
+                    this.freeword = word;
                     break;
             }
 
@@ -124,13 +129,15 @@ var app = new Vue({
     },
     methods: {
         // result.rest[]が奇数か偶数か判断
-        isShow:function(){
-            if(this.result.rest.length % 2 ===0){
-                return false;
-            }else{
-                return true;
+        AddOrEven: function() {
+            if (this.result.rest.length % 2 == 0) {
+                this.isAddOrEven = false;
+            }
+            else {
+                this.isAddOrEven = true;
             }
         },
+
         // ページネーションクリック時にcurrentPageを更新
         clickCallback: function(pageNum) {
             this.currentPage = Number(pageNum);
