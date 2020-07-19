@@ -123,6 +123,14 @@ var app = new Vue({
         window.addEventListener('scroll', this.handleScroll)
     },
     methods: {
+        // result.rest[]が奇数か偶数か判断
+        isShow:function(){
+            if(this.result.rest.length % 2 ===0){
+                return false;
+            }else{
+                return true;
+            }
+        },
         // ページネーションクリック時にcurrentPageを更新
         clickCallback: function(pageNum) {
             this.currentPage = Number(pageNum);
@@ -161,7 +169,7 @@ var app = new Vue({
                     position: new google.maps.LatLng(this.result.rest[item_index].latitude, this.result.rest[item_index].longitude),
                     title: this.result.rest[item_index].name,
                     icon: {
-                        url: "https://lh3.googleusercontent.com/qY0bI-W6usHWmi3Y3N2klUSPnlD0QhFeenfJxtbZisbqeFbKHxW7q5ZZJ5yO3YPWfBA1qdLdqmdts4qVF-gggMUnFEZtuhtXYRMltOvVXFteGvupoc1-wQy0Fi1fwx9qe7U-zx_YDA=s256-p-k",
+                        url: "https://lh3.googleusercontent.com/48aBcCUZCiUhVBEihmOGtvCdIVs5eoMA7nA7MYoomeMPJCr6GCeXyEluVIq5ReTrnheyzAA4f_Y2erPEyK_c79epDKr_pJINh7apciUSEkcrQTd_eUYy6a5nEEPRkrLvIMhj3VdYcg=s256-p-k",
                         scaledSize: new google.maps.Size(43, 43)
                     }
                 });

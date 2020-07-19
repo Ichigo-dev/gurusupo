@@ -418,6 +418,11 @@ footer p {
     flex-wrap: wrap;
 }
 
+
+.adjustment_item{
+    width: 47%;
+}
+
 .result_item {
     border-bottom: 1px solid #d2d2d2;
     width: 47%;

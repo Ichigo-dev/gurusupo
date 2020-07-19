@@ -33,6 +33,8 @@
         </header>
 
         <div class="container">
+
+
             <div id="page_info_box">
                 <div id="page_info" v-show="result">
                     <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
@@ -43,6 +45,7 @@
                     <i class="fa fa-search" @click="isOpened=!isOpened"></i>
                 </div>
 
+                <!--再検索-->
                 <transition name="trans_slide">
                     <div class="resurch_box" v-show="isOpened">
                         <div>
@@ -112,11 +115,12 @@
                         </div>
                     </div>
                 </transition>
-
             </div>
 
+            <!--マップ-->
             <div id="map"></div>
 
+            <!--検索結果-->
             <div id="result_box" v-show="result">
                 <div class="result_item" v-for="(item,index) in getItems">
                     <aside>
@@ -127,10 +131,16 @@
                     <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
                 </div>
 
+                <!--reuslt.rest[]の数が奇数だった場合に表示を調整する-->
+                <div class="adjustment_item" v-if="isShow">
+
+                </div>
+                <!--ページネーション-->
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
                 </paginate>
             </div>
 
+            <!--案内書き-->
             <div class="guide_box">
                 <ul>
                     <li>・気になるお店のキープアイコンをクリックすることでキープすることが出来ます。</li>
