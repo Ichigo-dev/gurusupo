@@ -133,7 +133,7 @@
 
                 <!--reuslt.rest[]の数が奇数だった場合に表示を調整する-->
                 <div class="adjustment_item" v-if="isAddOrEven">
-                    {{isAddOrEven}}
+    
                 </div>
                 <!--ページネーション-->
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">
