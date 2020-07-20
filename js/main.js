@@ -17,7 +17,7 @@ var app = new Vue({
         isWifi: false,
         freeInput: "",
         url: "result.html?",
-
+        rangekm:"",
         // 再検索アコーディオンメニュー
         isOpened: false,
         
@@ -126,6 +126,7 @@ var app = new Vue({
             }
 
         }
+        
 
     },
     mounted() {
