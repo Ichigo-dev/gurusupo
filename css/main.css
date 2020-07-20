@@ -519,8 +519,8 @@ footer p {
 
 .modal-header i{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3px;
+    right: 3px;
     opacity: 0.7;
     font-size: 30px;
 }
@@ -528,7 +528,7 @@ footer p {
 .modal-body{
     width: 90%;
     margin: 0 auto;
-    padding: 0;
+    padding: 5px;
 }
 
 .modal-body p{
@@ -538,6 +538,11 @@ footer p {
 .modal-body .gurunabi_link{
     display: flex;
     justify-content: space-between;
+    text-decoration:underline;
+}
+
+.modal-body .gurunabi_link a:hover{
+    color:#8c8c8c;
 }
 
 
