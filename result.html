@@ -136,7 +136,7 @@
                             <i class="far fa-times-circle" @click="hide('info')"></i>
                         </div>
                         <div class="modal-body">
-                            <p><i class="far fa-clock" v-show="item.opentime"></i>営業時間：{{item.opentime}}</p>
+                            <p v-show="item.opentime"><i class="far fa-clock" ></i>営業時間：{{item.opentime}}</p>
                             <p><i class="fas fa-phone"></i>電話番号：{{item.tel}}</p>
                             <div class="gurunabi_link">
                                 <p><a :href="item.url"><i class="fas fa-desktop"></i>pc版グルナビサイト</a></p>
