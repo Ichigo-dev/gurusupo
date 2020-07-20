@@ -37,7 +37,7 @@
 
             <div id="page_info_box">
                 <div id="page_info" v-show="result">
-                    <p>{{result.total_hit_count}}件の飲食店が見つかりました</p>
+                    <p v-cloak>{{result.total_hit_count}}件の飲食店が見つかりました</p>
                     <i class="fa fa-search" @click="isOpened=!isOpened"></i>
                 </div>
                 <div id="page_info" v-show="!result">
@@ -124,20 +124,20 @@
             <div id="result_box" v-show="result">
                 <div class="result_item" v-for="(item,index) in getItems">
                     <aside>
-                        <h2 :class="{no_access:!item.access.walk}"><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
-                        <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
+                        <h2 :class="{no_access:!item.access.walk}" v-cloak><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
+                        <p v-if="item.access.walk" v-cloak><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </aside>
                     <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
                     <i class="fas fa-info-circle" @click="show('info',index)"></i>
 
                     <modal name="info" :draggable="true" :resizable="true" width="80%" height="auto" v-show="isModals[index]">
                         <div class="modal-header">
-                            <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
+                            <h2 v-cloak><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
                             <i class="far fa-times-circle" @click="hide('info')"></i>
                         </div>
                         <div class="modal-body">
-                            <p v-show="item.opentime"><i class="far fa-clock" ></i>営業時間：{{item.opentime}}</p>
-                            <p><i class="fas fa-phone"></i>電話番号：{{item.tel}}</p>
+                            <p v-show="item.opentime" v-cloak><i class="far fa-clock" ></i>営業時間：{{item.opentime}}</p>
+                            <p v-cloak><i class="fas fa-phone"></i>電話番号：{{item.tel}}</p>
                             <div class="gurunabi_link">
                                 <p><a :href="item.url"><i class="fas fa-desktop"></i>pc版グルナビサイト</a></p>
                                 <p><a :href="item.url_mobile"><i class="fas fa-mobile-alt"></i>スマホ版グルナビサイト</a></p>

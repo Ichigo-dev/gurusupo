@@ -34,6 +34,10 @@ a:visited {
     display: none;
 }
 
+[v-cloak]{
+    display: none;
+}
+
 /*グラデーションボタン*/
 
 .btn-gradient-radius {
@@ -147,25 +151,25 @@ header p {
 ** 案内
 ****************************************************************/
 
-.guide{
+.guide {
     /*background-image:url("../images/woodback.jpg");*/
-    background:#e4a969;
+    background: #e4a969;
     height: 50%;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.guide p{
+.guide p {
     text-align: center;
-    color:white;
+    color: white;
     margin: 22px 10px;
     font-family: 'Noto Serif JP', serif;
 }
 
-.guide i{
-    color:white;
+.guide i {
+    color: white;
     font-size: 32px;
     margin: 15px;
 }
@@ -449,7 +453,7 @@ footer p {
     margin: 0 auto 10px;
 }
 
-.no_access{
+.no_access {
     margin-bottom: 27px;
 }
 
@@ -534,15 +538,15 @@ footer p {
 
 /*モーダル*/
 
-.modal-header{
-    position:relative
+.modal-header {
+    position: relative
 }
 
-.modal-header h2{
+.modal-header h2 {
     border: none;
 }
 
-.modal-header i{
+.modal-header i {
     position: absolute;
     top: 3px;
     right: 3px;
@@ -550,24 +554,24 @@ footer p {
     font-size: 30px;
 }
 
-.modal-body{
+.modal-body {
     width: 90%;
     margin: 0 auto;
     padding: 5px;
 }
 
-.modal-body p{
+.modal-body p {
     margin: 10px 0;
 }
 
-.modal-body .gurunabi_link{
+.modal-body .gurunabi_link {
     display: flex;
     justify-content: space-between;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
-.modal-body .gurunabi_link a:hover{
-    color:#8c8c8c;
+.modal-body .gurunabi_link a:hover {
+    color: #8c8c8c;
 }
 
 
@@ -701,32 +705,99 @@ footer p {
 }
 
 
-@media(min-width:768px){
-    header{
+@media(min-width:768px) {
+    header {
         height: 90px;
     }
-    
-    header p{
+
+    header p {
         line-height: 90px;
     }
-    
-    #hero_title h1{
+
+
+    #hero_title h1 {
         font-size: 88px;
     }
-    
-    #hero_title p{
+
+    #hero_title p {
         font-size: 16px;
     }
-    
-    .btn-gradient-radius{
+
+    .btn-gradient-radius {
         font-size: 20px;
     }
-    
-    .guide p{
+
+    .guide p {
         font-size: 20px;
     }
-    
-    #map{
+
+    .container {
+        padding-top: 90px;
+    }
+
+    #map {
         height: 400px;
     }
+
+    .resurch_box>div {
+        width: 80%;
+    }
+}
+
+@media(min-width:1024px) {
+
+    #hero_title h1 {
+        font-size: 92px;
+    }
+
+    #hero_title p {
+        font-size: 16px;
+    }
+
+    .btn-gradient-radius {
+        font-size: 24px;
+        padding: 10px 25px;
+    }
+
+    #surch_form {
+        width: 80%;
+    }
+
+    #distance_label p:first-child {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    #distance_label p:nth-child(2) {
+        margin-bottom: 20px;
+    }
+    
+    #distance_serect{
+        padding: 20px 0;
+    }
+
+    #freeword_box {
+        padding: 20px 0;
+    }
+    
+    .radio_serect_box  {
+        font-size: 16px;
+    }
+
+    #freeword_box input {
+        font-size: 22px;
+    }
+    
+    #surch_button_box{
+        padding: 20px 0;
+    }
+
+    .guide p {
+        font-size: 20px;
+    }
+
+    #map {
+        height: 500px;
+    }
+
 }
