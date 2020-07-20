@@ -124,7 +124,7 @@
             <div id="result_box" v-show="result">
                 <div class="result_item" v-for="(item,index) in getItems">
                     <aside>
-                        <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
+                        <h2 :class="{no_access:!item.access.walk}"><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </aside>
                     <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>

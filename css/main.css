@@ -421,6 +421,11 @@ footer p {
 
 .adjustment_item {
     width: 47%;
+    margin: 0 auto 10px;
+}
+
+.no_access{
+    margin-bottom: 10px;
 }
 
 .result_item {
