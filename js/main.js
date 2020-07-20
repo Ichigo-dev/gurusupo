@@ -22,7 +22,7 @@ var app = new Vue({
         isOpened: false,
         
         // モーダル
-        isModals:[],
+        isModals:[false,false,false,false,false,false,false,false,false,false],
 
         // グーグルマップ設定
         lat: 35.6809591,
@@ -126,10 +126,6 @@ var app = new Vue({
             }
 
         }
-        
-        // isModals[]の初期化
-        for(let i=0;i<10;i++)
-            this.$set(this.isModals,i,false);
 
     },
     mounted() {
