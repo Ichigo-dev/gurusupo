@@ -419,7 +419,7 @@ footer p {
 }
 
 
-.adjustment_item{
+.adjustment_item {
     width: 47%;
 }
 
@@ -502,12 +502,47 @@ footer p {
     color: #f1de04;
 }
 
+/*モーダル*/
+
+.modal-header{
+    position:relative
+}
+
+.modal-header h2{
+    border: none;
+}
+
+.modal-header i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+}
+
+.modal-body{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.modal-body p{
+    margin: 10px 0;
+}
+
+.modal-body .gurunabi_link{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*ページネーション*/
+
 .pagination {
     margin: 20px auto;
     display: block;
 }
 
-/*案内*/
+/*案内書き*/
 
 .guide_box {
     width: 90%;
@@ -617,7 +652,7 @@ footer p {
 }
 
 
-/* Vueの方で自動的に付与されるクラス::-enter-xx */
+/* 再検索用アニメーション */
 
 .trans_slide-enter-active,
 .trans_slide-leave-active {

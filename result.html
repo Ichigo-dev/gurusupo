@@ -127,13 +127,29 @@
                         <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
                         <p v-if="item.access.walk"><i class="fas fa-map-pin"></i>{{item.access.station}}{{item.access.walk}}分</p>
                     </aside>
-                    <i class="fas fa-info-circle"></i>
                     <i class="fas fa-star" :class="{keep:keep[index+(currentPage-1)*10]}" @click="setKeep($event,index)"></i>
+                    <i class="fas fa-info-circle" @click="show('info',index)"></i>
+
+                    <modal name="info" :draggable="true" :resizable="true" width="80%" v-show="isModals[index]">
+                        <div class="modal-header">
+                            <h2><span>{{index+1+(currentPage-1)*10}}.</span>{{item.name}}</h2>
+                            <i class="far fa-times-circle" @click="hide('info')"></i>
+                        </div>
+                        <div class="modal-body">
+                            <p><i class="far fa-clock"></i>営業時間：{{item.opentime}}</p>
+                            <p><i class="fas fa-phone"></i>電話番号：{{item.tel}}</p>
+                            <div class="gurunabi_link">
+                                <p><a :href="item.url"><i class="fas fa-desktop"></i>pc版グルナビサイト</a></p>
+                                <p><a :href="item.url_mobile"><i class="fas fa-mobile-alt"></i>スマホ版グルナビサイト</a></p>
+                            </div>
+                        </div>
+                    </modal>
                 </div>
+
 
                 <!--reuslt.rest[]の数が奇数だった場合に表示を調整する-->
                 <div class="adjustment_item" v-if="isAddOrEven">
-    
+
                 </div>
                 <!--ページネーション-->
                 <paginate v-show="result" :page-count="getPageCount" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'＜'" :next-text="'＞'" :container-class="'pagination'" :page-class="'page-item'">

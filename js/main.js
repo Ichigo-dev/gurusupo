@@ -1,4 +1,6 @@
 Vue.component('paginate', VuejsPaginate)
+const VModal = window["vue-js-modal"].default
+Vue.use(VModal);
 
 /***************************************************************
  ** Vueインスタンスの生成
@@ -18,6 +20,9 @@ var app = new Vue({
 
         // 再検索アコーディオンメニュー
         isOpened: false,
+        
+        // モーダル
+        isModals:[],
 
         // グーグルマップ設定
         lat: 35.6809591,
@@ -121,7 +126,10 @@ var app = new Vue({
             }
 
         }
-
+        
+        // isModals[]の初期化
+        for(let i=0;i<10;i++)
+            this.$set(this.isModals,i,false);
 
     },
     mounted() {
@@ -222,8 +230,24 @@ var app = new Vue({
 
             // URLに遷移
             window.location.href = this.url;
-        }
+        },
+
+        // vue-js-modal
+        show: function(name,index) {
+            // isModals[]の初期化
+            for(let i=0;i<this.isModals.length;i++){
+                this.$set(this.isModals,i,false);
+                if(i===index){
+                    this.$set(this.isModals,i,true);
+                }
+            }
+            this.$modal.show(name);
+        },
+        hide: function(name) {
+            this.$modal.hide(name);
+        },
     },
+
     computed: {
         // 現在ページのアイテムを返す
         getItems: function() {
@@ -253,8 +277,8 @@ function initMap() {
 
         // 緯度経度の取得
 
-        app.lat = position.coords.latitude;
-        app.lng = position.coords.longitude;
+        // app.lat = position.coords.latitude;
+        // app.lng = position.coords.longitude;
 
         // 緯度経度の取得
         latLng = new google.maps.LatLng(app.lat, app.lng);
@@ -317,3 +341,7 @@ function initMap() {
         })
     });
 }
+
+/**************************************************************
+ ** 
+ ****************************************************************/
