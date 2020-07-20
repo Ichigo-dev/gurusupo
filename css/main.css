@@ -148,7 +148,8 @@ header p {
 ****************************************************************/
 
 .guide{
-    background-image:url("../images/woodback.jpg");
+    /*background-image:url("../images/woodback.jpg");*/
+    background:#e4a969;
     height: 50%;
     display: flex;
     flex-direction:column;
@@ -161,6 +162,12 @@ header p {
     color:white;
     margin: 22px 10px;
     font-family: 'Noto Serif JP', serif;
+}
+
+.guide i{
+    color:white;
+    font-size: 32px;
+    margin: 15px;
 }
 
 
