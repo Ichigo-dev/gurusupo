@@ -277,8 +277,8 @@ function initMap() {
 
         // 緯度経度の取得
 
-        // app.lat = position.coords.latitude;
-        // app.lng = position.coords.longitude;
+        app.lat = position.coords.latitude;
+        app.lng = position.coords.longitude;
 
         // 緯度経度の取得
         latLng = new google.maps.LatLng(app.lat, app.lng);
