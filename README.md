@@ -1,59 +1,18 @@
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# GURUSUPO
  
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
+GURUSUPOとは現在地から周辺の飲食店を探し出すWebサービス
  
-"hoge"が何かを簡潔に紹介する
- 
-# DEMO
- 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
- 
-# Features
- 
-"hoge"のセールスポイントや差別化などを説明する
- 
-# Requirement
- 
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-# Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
- 
-# Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
- 
-# Note
- 
-注意点などがあれば書く
- 
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
+# 主な機能
+・現在地からいますぐ検索（半径500ｍ）
+・条件検索（距離、カード利用、電子マネー利用、駐車場、WIFI）
+・グーグルマップにマーカーで表示
+・お気に入りに登録することでページを離れるまでアイコンの色とマップ上のマーカーの色を変えることが出来る
+
+#使用したフレームワーク、ライブラリ、
+・Vue.js(jQuery未使用)
+・vue-paginate
+・vue-js-modal
+
+#メモ
+・vue-paginateがBootstrap3に依存していて大変だった（Bootstrap使用する予定だったが使用していない）
+・GET通信を無理やりJavaScriptで実装した
